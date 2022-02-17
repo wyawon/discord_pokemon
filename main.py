@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from pprint import pprint
 import csv
+from os import getenv
 
 csv_file = open("./pokemon_status.csv", "r", encoding="utf_8", errors="", newline="")
 r = csv.reader(csv_file, delimiter=",", doublequote=True, lineterminator="\r\n", quotechar='"', skipinitialspace=True)
