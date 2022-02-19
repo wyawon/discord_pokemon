@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import csv
+from os import getenv
 
 csv_file = open("./VLL2021.csv", "r", encoding="utf_8", errors="", newline="")
 r = csv.reader(csv_file, delimiter=",", doublequote=True, lineterminator="\r\n", quotechar='"', skipinitialspace=True)
@@ -8,7 +9,7 @@ rlist = list(r)
 
 # おまじない(Botの用意)
 bot = commands.Bot(command_prefix="!")
-TOKEN = "OTQ0NTg2NTY3MjA3NTA1OTgw.YhDwyw.Qf454u4qmPbV8kcOWmgurIGttp0"
+TOKEN = getenv('DISCORD_BOT_TOKEN')
 
 #本体
 @bot.event
